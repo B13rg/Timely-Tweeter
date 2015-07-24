@@ -2,12 +2,9 @@
 My first repository project
 
 ##Features
-
-
-
- *Posts to Twitter from the command line
- *Makes a post after set time amount
- *Reads posts from a file
+        Posts to Twitter from the command line
+        Makes a post after set time amount
+        Reads posts from a file
 
 ##Quick Start
 
