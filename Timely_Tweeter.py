@@ -4,6 +4,10 @@ import tweepy, time, sys
 
 argfile = str(sys.argv[1])
 
+print ("Timely Tweeter")
+print (" ")
+print ("Posting so you don't have to")
+
 #Twitter Account info
     #Place Keys and Tokens bewteen the quotes
 CONSUMER_KEY = '' #The Consumer Key (API Key)
@@ -20,6 +24,7 @@ api = tweepy.API(auth)
 filename=open(argfile, 'r') #Opens file
 f=filename.readlines() #Pulls data from file
 filename.close() #Closes file
+print ("Pulled data from file")
 
 for line in f:
     api.update_status(line)
