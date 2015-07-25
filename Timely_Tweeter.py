@@ -1,6 +1,6 @@
 #-=- Coding: Python UTF-8 -=-
 
-import tweepy, time, sys 
+import tweepy, time, sys, random
 
 argfile = str(sys.argv[1])
 
@@ -14,7 +14,6 @@ CONSUMER_KEY = '' #The Consumer Key (API Key)
 CONSUMER_SECRET = '' #The Consumer Secret (API Secret)
 ACCESS_KEY = '' #The Access Token
 ACCESS_SECRET = '' #The Access Token Secret
-SLEEPY_TIME = #Time to wait in seconds between tweets
 
 #Now it checks in with Twitter and gets authenticated
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -26,6 +25,12 @@ f=filename.readlines() #Pulls data from file
 filename.close() #Closes file
 print ("Pulled data from file")
 
+minimum = raw_input("Set minimum time (sec):")
+maximum = raw_input("Set maximum time (sec):")
+
 for line in f:
+    SLEEPY_TIME = random.randint(minimum, maximum)
     api.update_status(line)
+    print ("---Tweet sent---")
+    print ("Sleeping for ", SLEEPY_TIME/360, " hours.")
     time.sleep(SLEEPY_TIME) #Time to wait
