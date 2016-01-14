@@ -25,12 +25,12 @@ f=filename.readlines() #Pulls data from file
 filename.close() #Closes file
 print ("Pulled data from file")
 
-minimum = raw_input("Set minimum time (sec):")
-maximum = raw_input("Set maximum time (sec):")
+minimum = raw_input("Set minimum time (min):")
+maximum = raw_input("Set maximum time (min):")
 
 for line in f:
     SLEEPY_TIME = random.randint(minimum, maximum)
     api.update_status(line)
     print ("---Tweet sent---")
-    print ("Sleeping for ", SLEEPY_TIME/360, " hours.")
+    print ("Sleeping for ", SLEEPY_TIME/60, " hours.")
     time.sleep(SLEEPY_TIME) #Time to wait
